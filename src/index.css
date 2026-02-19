@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand colors - Blue (Trust & Security) */
+    --brand-blue: 210 73% 42%;
+    --brand-blue-dark: 210 73% 30%;
+    --brand-blue-light: 210 73% 55%;
+
+    /* Brand colors - Green (Growth) */
+    --brand-green: 122 39% 49%;
+    --brand-green-dark: 122 39% 35%;
+    --brand-green-light: 122 39% 62%;
+
+    /* Semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 210 73% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 122 39% 49%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 50%;
+
+    --accent: 122 39% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 73% 42%;
+
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 73% 35% / 0.92) 0%, hsl(122 39% 35% / 0.85) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-green)) 100%);
+    --gradient-cta: linear-gradient(90deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-green)) 100%);
+    --gradient-section: linear-gradient(135deg, hsl(210 40% 97%) 0%, hsl(122 30% 96%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(210 73% 42% / 0.15);
+    --shadow-card-hover: 0 8px 30px -4px hsl(210 73% 42% / 0.25);
+    --shadow-section: 0 2px 40px -10px hsl(210 73% 42% / 0.12);
+
+    /* Sidebar (kept for compatibility) */
+    --sidebar-background: 210 73% 38%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 210 73% 38%;
+    --sidebar-accent: 210 73% 32%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 73% 32%;
+    --sidebar-ring: 122 39% 49%;
+  }
+
+  .dark {
+    --background: 210 30% 8%;
+    --foreground: 0 0% 95%;
+    --card: 210 25% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 25% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 210 73% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 122 39% 49%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 18%;
+    --muted-foreground: 210 10% 65%;
+    --accent: 122 39% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 22%;
+    --input: 210 20% 22%;
+    --ring: 210 73% 55%;
+    --sidebar-background: 210 30% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 210 73% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 210 20% 22%;
+    --sidebar-ring: 122 39% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-brand {
+    background: var(--gradient-brand);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-section {
+    background: var(--gradient-section);
+  }
+
+  .shadow-card-custom {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover-custom {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
